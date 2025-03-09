@@ -1,0 +1,18 @@
+--Insert Into Banco SQL Server
+
+Patch(
+    CADPRODUTO;
+    Defaults(CADPRODUTO);
+    {DATAINCLUSAO: Now()};
+    {CODPROD: txtCodigo.Text};
+    {DESCPROD: txtDescricao.Text};
+    {UM: ddUm.SelectedText.Value};
+    {LOCAL: ddLocal.SelectedText.Value};
+    {ENDERECO: ddEndereco.SelectedText.Value}
+);;
+Notify(
+    "Registro Inserido com Sucesso";
+    NotificationType.Success;
+    2000
+);;
+Navigate(Main)
